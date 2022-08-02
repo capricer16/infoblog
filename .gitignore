@@ -11,7 +11,7 @@ __pycache__
 
 # Distribution / packaging
 .Python
-infoblog/infoblog/settings/local.py
+infoblog/settings/local.py
 infoblog/media/
 build/
 develop-eggs/
