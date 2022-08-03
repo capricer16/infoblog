@@ -9,7 +9,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-ccva/config/settings/local.py
 ccva/media/
 build/
 develop-eggs/
