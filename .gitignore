@@ -1,7 +1,5 @@
-.env
-
 # Byte-compiled / optimized / DLL files
-__pycache__
+__pycache__/
 *.py[cod]
 *$py.class
 
@@ -11,8 +9,8 @@ __pycache__
 
 # Distribution / packaging
 .Python
-infoblog/settings/local.py
-infoblog/media/
+ccva/config/settings/local.py
+ccva/media/
 build/
 develop-eggs/
 dist/
