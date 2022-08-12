@@ -3,5 +3,5 @@ from django.contrib.auth.models import AbstracUser
 
 # Create your models here.
 
-class User(AbstracUser):
+class User(AbstractUser):
     """Extiende el Usuario de django"""
