@@ -1,3 +1,3 @@
-web: gunicorn ccva.config.settigs.wsgi
+web: gunicorn settigs.wsgi
 
 
