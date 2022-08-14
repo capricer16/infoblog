@@ -1,2 +1,2 @@
-web: gunicorn ccva.config.wsgi 
+web: gunicorn config.wsgi 
 
