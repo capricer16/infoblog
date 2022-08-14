@@ -5,5 +5,5 @@ from . import views
 app_name = "post"
 
 urlpatterns = [
-    path('', views.ListarPost.as_view(), name="listarPosts"),
+    path("", views.ListarPost.as_view(), name="listarPosts"),
 ]

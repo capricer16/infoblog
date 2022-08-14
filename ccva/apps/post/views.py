@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
-from django.views.generic.list import ListView
+from django.shortcuts import render
 
-class ListarPost(ListView):
-    model = Post
-    template_name = 'Post/listarPosts.html'
+# Create your views here.
+
+
+def index(request):
+    return render(request, 'home/indexs.html')
