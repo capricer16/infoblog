@@ -1,0 +1,24 @@
+@import url('var.css');
+
+.banner {
+    background-image: url('../img/banner.png');
+    height: 200px;
+}
+.navbar{
+    background-color: var(--main-color);
+}
+/* iconos  */
+i {
+    font-size: 25px;
+    color: var(--main-color);
+}
+/*Botones */
+.btn-primary{
+    background-color: var(--main-color)!important;
+}
+
+/*footer*/
+.footer-style{
+    background-color: #006EA5;
+    color: white;
+}
