@@ -16,4 +16,7 @@ def noticias(request):
     return render(request, 'home/noticias.html')
 
 def quienessomos(request):
-    return render(request, 'home/quienessomos.html')  
+    return render(request, 'home/quienessomos.html')
+
+def iniciarsecion(request):
+    return render(request, 'home/iniciarsecion.html')  

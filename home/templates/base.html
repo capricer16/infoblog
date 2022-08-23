@@ -36,6 +36,20 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
             </li>
+            
+
+            <li class="nav-item">
+              {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="nav-link">
+                Cerrar sesión
+              {% else %}
+                <a href="{% url 'login' %}" class="nav-link">
+                Iniciar sesión
+              {% endif %}
+              </a>
+            </li>
+
+
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscador" aria-label="Search">
@@ -99,7 +113,7 @@
         </li>
       </ul>
     </div>
-  </footer>
+    </footer>
   </div>       
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
