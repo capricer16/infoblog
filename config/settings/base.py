@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'post',
     'home',
+    'capacitacion',
 ]
 
 MIDDLEWARE = [

@@ -28,10 +28,10 @@
               <a class="nav-link" href="{% url 'quienessomos' %}">¿Quiénes somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'noticias' %}">Noticias</a>
+              <a class="nav-link" href="{% url 'post:listarpost' %}">Noticias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'capacitaciones' %}">Capacitaciones</a>
+              <a class="nav-link" href="{% url 'capacitacion:capacitacion' %}">Capacitaciones</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
@@ -57,8 +57,8 @@
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'index' %}" class="nav-link p-0 text-white">Inicio</a></li>
           <li class="nav-item mb-2"><a href="{% url 'quienessomos' %}" class="nav-link p-0 text-white">¿Quiénes somos?</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'noticias' %}" class="nav-link p-0 text-white">Noticias</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'capacitaciones' %}" class="nav-link p-0 text-white">Capacitaciones</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'post:listarpost' %}" class="nav-link p-0 text-white">Noticias</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'capacitacion:capacitacion' %}" class="nav-link p-0 text-white">Capacitaciones</a></li>
           <li class="nav-item mb-2"><a href="{% url 'contacto' %}" class="nav-link p-0 text-white">Contacto</a></li>
         </ul>
       </div>

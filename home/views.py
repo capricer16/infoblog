@@ -12,8 +12,5 @@ def contacto(request):
 def capacitaciones(request):
     return render(request, 'home/capacitaciones.html')
 
-def noticias(request):
-    return render(request, 'home/noticias.html')
-
 def quienessomos(request):
     return render(request, 'home/quienessomos.html')  

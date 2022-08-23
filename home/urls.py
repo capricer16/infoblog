@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
@@ -6,7 +6,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('contacto', views.contacto, name='contacto'),
-    path('capacitaciones', views.capacitaciones, name='capacitaciones'),
-    path('noticias', views.noticias, name='noticias'),
+    path('capacitacion', include('capacitacion.urls')),
+    path('post', include('post.urls')),
     path('quienessomos', views.quienessomos, name='quienessomos'),
 ]
