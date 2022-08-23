@@ -9,4 +9,5 @@ urlpatterns = [
     path('capacitacion', include('capacitacion.urls')),
     path('post', include('post.urls')),
     path('quienessomos', views.quienessomos, name='quienessomos'),
+    path('Iniciarsecion', views.iniciarsecion, name='iniciarsecion'),
 ]

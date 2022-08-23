@@ -13,4 +13,7 @@ def capacitaciones(request):
     return render(request, 'home/capacitaciones.html')
 
 def quienessomos(request):
-    return render(request, 'home/quienessomos.html')  
+    return render(request, 'home/quienessomos.html')
+
+def iniciarsecion(request):
+    return render(request, 'home/iniciarsecion.html')  
