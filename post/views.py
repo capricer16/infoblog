@@ -11,7 +11,7 @@ from .forms import CommentForm
 def post_list(request):
     posts = Post.objects.all()
     print(posts.query)
-    return render(request, 'blog/blog_list.html', {'posts': posts})
+    return render(request, 'post/post_list.html', {'posts': posts})
 
 
 def post_create(request):
@@ -32,7 +32,7 @@ def post_create(request):
             messages.success(request, 'Post creado con éxito') # mandamos un mensaje de éxito
             return redirect('post_list') # dirigimos al usuario a la página que nos parezca
         messages.error(request, 'Hay errores en el formulario')
-    return render(request, 'blog/blog_create.html', {'form': form})
+    return render(request, 'post/post_create.html', {'form': form})
 
 
 def post_update(request, pk):
@@ -50,7 +50,7 @@ def post_update(request, pk):
             # si es válido, guardamos el formulario, se guarda la instancia, de hecho
             form.save()
             return redirect('post_list') # redirigimos
-    return render(request, 'blog/blog_update.html', {'form': form, 'post': post})
+    return render(request, 'post/post_update.html', {'form': form, 'post': post})
 
 def post_delete(request, pk):
     # buscamos el post y lo borramos, lanzamos un error 404 (Not found caso contrario)
@@ -62,7 +62,7 @@ def post_delete(request, pk):
 def post_detail(request, pk):
     # buscamos el post y lo mostramos
     post = get_object_or_404(Post, id=pk)
-    return render(request, 'blog/blog_detail.html', {'post': post})
+    return render(request, 'post/post_detail.html', {'post': post})
 
 def comment_create(request, pk):
     # buscamos el post y lo mostramos
@@ -80,7 +80,7 @@ def comment_create(request, pk):
             comment.user = request.user
             comment.save()
             return redirect('post_detail', pk=post.pk)
-    return render(request, 'blog/comment_create.html', context)
+    return render(request, 'post/comment_create.html', context)
 
 def comment_delete(request, pk):
     comment = get_object_or_404(Comments, id=pk)
@@ -101,4 +101,4 @@ def comment_update(request, pk):
         if form.is_valid():
             form.save()
             return redirect('post_detail', pk=comment.post.pk)
-    return render(request, 'blog/comment_edit.html', context)
+    return render(request, 'post/comment_edit.html', context)
