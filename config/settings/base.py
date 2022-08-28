@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'post',
     'home',
     'capacitacion',
-    'quienessomos'
+    'quienessomos',
+    'contacto'
 ]
 
 MIDDLEWARE = [
@@ -84,11 +85,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'infoblogbd',
+        'NAME': 'infoblog',
         'USER': 'postgres',
-        'PASSWORD': 'ccva2022',
+        'PASSWORD': 'juani2022',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
         'DEFAULT_CHARSET': 'utf-8', 
     }
 }
@@ -130,13 +131,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles'),
-    os.path.join(os.path.dirname(BASE_DIR),"static"),
-]
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles' # usado en deploy, no es significante en local
 
+STATICFILES_DIRS = [
+    BASE_DIR.parent / 'static', # apuntar a una carpeta de mas arriba
+]
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

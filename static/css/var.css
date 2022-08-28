@@ -3,3 +3,17 @@
     --main-color: #002250;
     --secondary-color :#006EA5;
   }
+
+.map-container-2{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+.map-container-2 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  } -->

@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 class Quienessomos(models.Model):
     titulo = models.CharField(max_length=200)
@@ -12,4 +14,4 @@ class Quienessomos(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.titulo

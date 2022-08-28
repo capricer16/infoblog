@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{%  static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/640ec29654.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
   <header>
@@ -18,11 +19,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    
+        
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
+              <a class="btn btn-primary" role="button" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'quienessomos:quienessomos' %}">¿Quiénes somos?</a>
@@ -34,7 +35,7 @@
               <a class="nav-link" href="{% url 'capacitacion:capacitacion' %}">Capacitaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+              <a class="nav-link" href="{% url 'contacto:contacto' %}">Contacto</a>
             </li>
             
 
@@ -73,7 +74,7 @@
           <li class="nav-item mb-2"><a href="{% url 'quienessomos:quienessomos' %}" class="nav-link p-0 text-white">¿Quiénes somos?</a></li>
           <li class="nav-item mb-2"><a href="{% url 'post:listarpost' %}" class="nav-link p-0 text-white">Noticias</a></li>
           <li class="nav-item mb-2"><a href="{% url 'capacitacion:capacitacion' %}" class="nav-link p-0 text-white">Capacitaciones</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'contacto' %}" class="nav-link p-0 text-white">Contacto</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'contacto:contacto' %}" class="nav-link p-0 text-white">Contacto</a></li>
         </ul>
       </div>
       <div class="col-4 offset-1">
@@ -102,12 +103,12 @@
           </a>
         </li>
         <li class="ms-3 px-2">
-          <a class="link-dark" href="#">
+          <a class="link-dark" role="link" href="mailto:ccva@hotmail.com.ar">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </li>
         <li class="ms-3 px-2">
-          <a class="link-dark" href="#">
+          <a class="link-dark" href="https://www.facebook.com/camcomvangela">
             <i class="fa-brands fa-square-facebook"></i>
           </a>
         </li>
