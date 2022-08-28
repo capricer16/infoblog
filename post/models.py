@@ -6,10 +6,13 @@ class Post(models.Model):
     contenido = models.TextField()
     fecha_publicación = models.DateField(auto_now_add=True)
     foto = models.ImageField()
-
+    
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.titulo
+
+    

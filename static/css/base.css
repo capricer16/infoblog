@@ -22,4 +22,9 @@ i {
     background-color: #006EA5;
     color: white;
 }
+/*Quienessomos*/
+.fondo-camara{
+    background-image: url('../img/frente.png');
+}
   
+

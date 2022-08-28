@@ -28,16 +28,27 @@
               <a class="nav-link" href="{% url 'quienessomos:quienessomos' %}">¿Quiénes somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'post:listarpost' %}">Noticias</a>
+              <a class="nav-link" href="{% url 'post:post_list' %}">Noticias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'capacitacion:capacitacion' %}">Capacitaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+              <a class="nav-link" href="{% url 'contacto:contacto' %}">Contacto</a>
             </li>
-            
-
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul class="dropdown-menu">
+                {% for categorias in categorias %}
+                <li><a class="dropdown-item" href="#">{{ Categoria.nombre }}</a></li>
+                {% endfor %}
+                <!--   <li><a class="dropdown-item" href="#">Categoría 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Categoría 3</a></li>-->
+              </ul>
+            </li>
             <li class="nav-item">
               {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}" class="nav-link">
@@ -71,9 +82,9 @@
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'index' %}" class="nav-link p-0 text-white">Inicio</a></li>
           <li class="nav-item mb-2"><a href="{% url 'quienessomos:quienessomos' %}" class="nav-link p-0 text-white">¿Quiénes somos?</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'post:listarpost' %}" class="nav-link p-0 text-white">Noticias</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'post:post_list' %}" class="nav-link p-0 text-white">Noticias</a></li>
           <li class="nav-item mb-2"><a href="{% url 'capacitacion:capacitacion' %}" class="nav-link p-0 text-white">Capacitaciones</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'contacto' %}" class="nav-link p-0 text-white">Contacto</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'contacto:contacto' %}" class="nav-link p-0 text-white">Contacto</a></li>
         </ul>
       </div>
       <div class="col-4 offset-1">
@@ -107,7 +118,7 @@
           </a>
         </li>
         <li class="ms-3 px-2">
-          <a class="link-dark" href="#">
+          <a class="link-dark" href="https://www.facebook.com/camaradecomerciova">
             <i class="fa-brands fa-square-facebook"></i>
           </a>
         </li>

@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
-app_name = "contacto"
+app_name = "categorias"
 
 urlpatterns = [
-     path('', views.Contacto.as_view(), name='contacto'),
+     path('', views.categorias, name='categorias'),     
 ]

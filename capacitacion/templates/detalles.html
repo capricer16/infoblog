@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} Inicio {% endblock titulo %}
+
+{% block contenido %}
+
+
+<div class="container">
+    <h1 class="text-center"> {{ capacitacion.titulo }}</h1> 
+    <p>{{ capacitacion.subtitulo }}</p>
+    <div class="text-center">
+    <div   class="row">
+            <div class="col-md-6">
+                <img src="{{ capacitacion.foto.url }}" class="img-fluid" alt="Imagen de la capacitacion">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p>{{ capacitacion.contenido }}</p>
+        </div>
+        </div>
+    <a href="{% url 'capacitacion:capacitacion' %}" class="btn btn-primary">Volver</a>
+    <a href="" class="btn btn-primary">Comentar</a>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>{{ object.content }}</p>
+            <p>{{ object.user.username }}</p>
+            <p>Fecha: {{ object.created_at }}</p>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="container">
+            {% if request.user == comment.user %}
+                <p>Soy el dueño {{ request.user }}</p>
+                <a href="{% url 'object_update' comment.id %}" class="btn btn-primary">Editar comentario</a>
+                <a href="{% url 'object_delete' comment.id %}" class="btn btn-danger">Borrar comentario</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    <hr>
+</div>
+
+
+{% endblock contenido %}

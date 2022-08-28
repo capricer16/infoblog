@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} Inicio {% endblock titulo %}
+
+{% block contenido %}
+
+
+
+<div class="container">
+    <div><h1>Contactanos</h1></div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28293.124926762954!2d-60.73791183454248!3d-27.57366196097225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9447a9b6238452b5%3A0x114ee7641418f02f!2sVilla%20Angela%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1661572477907!5m2!1ses-419!2sar" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <br />
+        <div class="col-md-6">
+            <form class="my-form">
+                <div class="form-group">
+                    <label for="form-name">Name</label>
+                    <input type="email" class="form-control" id="form-name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">Email Address</label>
+                    <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="form-subject">Telephone</label>
+                    <input type="text" class="form-control" id="form-subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <label for="form-message">Email your Message</label>
+                    <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+                </div>
+                <button class="btn btn-secondary" type="submit">Contactanos</button>                
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .my-form {
+        color: #305896;
+    }
+    .my-form .btn-default {
+        background-color: #305896;
+        color: #fff;
+        border-radius: 0;
+    }
+    .my-form .btn-default:hover {
+        background-color: #4498C6;
+        color: #fff;
+    }
+    .my-form .form-control {
+        border-radius: 0;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock contenido %}
