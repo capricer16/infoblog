@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'accounts',
     'post',
     'home',
+    'capacitacion',
+    'quienessomos',
+    'contacto',
+    'categorias'
+    
 ]
 
 MIDDLEWARE = [
@@ -81,8 +86,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'infoblogbd',
+        'USER': 'postgres',
+        'PASSWORD': 'ccva2022',
+        'HOST': 'localhost',
+        'PORT': '5433',
+        'DEFAULT_CHARSET': 'utf-8', 
     }
 }
 
@@ -141,3 +151,5 @@ AUTH_USER_MODEL = 'accounts.User'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
