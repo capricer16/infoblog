@@ -1,29 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<div class="container">
-    <h1 class="my-3 text-center">Lista de posts</h1>
+{% block titulo %} Inicio {% endblock titulo %}
 
-    {% for post in posts %}
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card">
-            <img src="{{ post.imagen.url }}" class="card-img-top" alt="Imagen del post">
-            <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.content }}</p>
-            </div>
+{% block contenido %}
+
+
+<div class="container h-100">
+  <div class="row h-100 align-items-center">
+    <div class="col-12 text-center">
+      <h1 class="my-1 titulo-h1 tit-responsive">
+        NOTICIAS
+      </h1>
+      <p class="lead"></p>
+    </div>
+  </div>
+</div>
+  
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <img src="{{post.foto.url}}"  class="card-img-top" alt="imagen del post">
+          <div class="card-body">
+            <h3 class="card-title">{{ post.titulo }}</h3>
+            <h6 class="card-title">{{ post.Subtitulo }}</h6>
+            <p class="card-text">{{ post.contenido }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-outline-success btn-sm">Read More</a>
+            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
           </div>
         </div>
       </div>
-    {% if request.user.is_authenticated %}
-      {% if request.user == post.user %}
-      <a class="btn btn-primary" href="{% url 'post_update' post.id %}">Editar Post</a>
-      <a class="btn btn-danger" href="{% url 'post_delete' post.id %}">Borrar Post</a>
-      {% endif %}
-    {% endif %}
-    <a class="btn-success" href="{% url 'post_detail' post.id %}">Ver Post</a>
-  {% endfor %}
-</div>
-{% endblock %}
+        {% if request.user.is_authenticated %}
+          {% if request.user == post.user %}
+          <a class="btn btn-primary" href="{% url 'post_update' post.id %}">Editar Post</a>
+          <a class="btn btn-danger" href="{% url 'post_delete' post.id %}">Borrar Post</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+ 
+{% endblock contenido %}

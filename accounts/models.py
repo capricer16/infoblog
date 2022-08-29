@@ -21,6 +21,14 @@ class User(AbstractUser):
     role = models.CharField('Role', max_length=12, choices=ROLE_CHOICES, default=VISITANTE)
     dni = models.CharField('DNI', max_length=12, null=True, blank=True)
     address = models.CharField('Domicilio', max_length=30, null=True, blank=True)
+    date_of_birth= models.DateTimeField("Fecha de Nacimiento", null=True, blank=False)
+    cellphone= models.PositiveIntegerField("Celular", null=True, blank=False)
+    name= models.CharField("Nombre", max_length=30, null=True, blank=False)
+    surname= models.CharField("Apellido", max_length=30, null=True, blank=False)
+    e_mail= models.EmailField("Email", max_length=40, null=True, blank=False)
+    city = models.CharField("Ciudad", max_length=20, null=True, blank=False)
+    state_province = models.CharField("Provincia", max_length=20, null=True, blank=False)
+    country = models.CharField("Pais", max_length=20, null=True, blank=False)
 
 
 # class UserProfile(models.Model):

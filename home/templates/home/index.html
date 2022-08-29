@@ -35,7 +35,7 @@
                                                     <h4 class="card-title">{{ post.titulo }}</h4>
                                                     <h6 class="card-title">{{ post.subtitulo }}</h6>
                                                     <p class="card-text">{{ post.contenido }}</p>
-                                                    <a href="{% url 'post:post_detallesdelpost' post.id %}"><small>Continuar leyendo...</small></a>        
+                                                    <a href="{% url 'post_detail' post.id %}"><small>Continuar leyendo...</small></a>        
                                                 </div>
                                             </div>
                                         </div>

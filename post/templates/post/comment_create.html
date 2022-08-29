@@ -2,22 +2,22 @@
 {% load crispy_forms_tags %}
 
 
-{% block content %}
+{% block contenido %}
 <div class="container">
-    <h1 class= "text.center">Post: {{ post.title }} </h1>
+    <h1 class= "text.center">Post: {{ post.titulo }} </h1>
 
     <div class="text.center">
 
         <div class="row">
             <div class="col-md-6">
 
-                <img src="{{ post.imagen.url }}" class="img-fluid" alt="Imagen del post">
+                <img src="{{ post.foto.url }}" class="img-fluid" alt="Imagen del post">
 
             </div>
 
         </div>
             <div class="col-md-6">
-                <p>{{ post.content }}</p>
+                <p>{{ post.contenido }}</p>
             </div> 
             <a href="{% url 'post_list' %}" class="btn btn-primary">Volver</a>
             <hr>
@@ -27,6 +27,8 @@
                     {{ form|crispy }}
                     <button type="submit"class="btn btn-primary">Comentar</button>
                 </form>
-            </div>
+        </div>
 </div>  
-{% endblock content %}
+
+
+{% endblock contenido %}

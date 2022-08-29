@@ -1,5 +1,3 @@
-
-    
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import PostForm
@@ -71,8 +69,12 @@ def post_delete(request, pk):
 
 def post_detail(request, pk):
     # buscamos el post y lo mostramos
+    context = {}
     post = get_object_or_404(Post, id=pk)
-    return render(request, 'post/post_detail.html', {'post': post})
+    comments=Comments.objects.all()
+    context['post'] = post
+    context['comments'] = comments
+    return render(request, 'post/post_detail.html', context)
 
 
 @login_required
@@ -81,8 +83,10 @@ def comment_create(request, pk):
     context = {}
     post = get_object_or_404(Post, id=pk)
     form = CommentForm()
+    comments=Comments.objects.all().order_by('-id')
     context['post'] = post
     context['form'] = form
+    context['comments'] = comments
     if request.method == 'POST':
         form = CommentForm(request.POST)
         context['form'] = form
@@ -92,7 +96,7 @@ def comment_create(request, pk):
             comment.user = request.user
             comment.save()
             return redirect('post_detail', pk=post.pk)
-    return render(request, 'post/comment_create.html', context)
+    return render(request, 'post/post_detail.html', context)
 
 @login_required
 def comment_delete(request, pk):
