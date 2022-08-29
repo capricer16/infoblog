@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2-binary',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'infoblogbd',
         'USER': 'postgres',
         'PASSWORD': 'ccva2022',
