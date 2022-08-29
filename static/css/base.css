@@ -25,6 +25,8 @@ i {
 /*Quienessomos*/
 .fondo-camara{
     background-image: url('../img/frente.png');
+    height: 100%;
+    background-repeat: no-repeat;
 }
   
 
