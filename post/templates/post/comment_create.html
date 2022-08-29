@@ -12,7 +12,8 @@
             <div class="col-md-6">
                 <img src="{{ post.foto.url }}" class="img-fluid" alt="Imagen del post">
             </div>
-        </div>
+
+        
             <div class="col-md-6">
                 <p>{{ post.contenido }}</p>
             </div> 
@@ -24,8 +25,10 @@
                     {{ form|crispy }}
                     <button type="submit"class="btn btn-primary">Comentar</button>
                 </form>
+            </div>
         </div>
-</div>  
+    </div> 
+</div> 
 
 
 {% endblock contenido %}

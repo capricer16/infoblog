@@ -23,7 +23,16 @@ i {
     color: white;
 }
 .imagen-fondo {
-    background-image: url('../img/frente.png');
-    height: 200px;
-    background-repeat: no-repeat;
+    min-height: 100vh;
+    background: url('../img/frente.png')no-repeat center center;
+    background-size: cover;
+
+}
+.register {
+    background-color: #006EA5;
+}
+.login-fondo{
+    min-height: 100vh;
+    background: url('../img/frente.png')no-repeat center center;
+    background-size: cover;
 }

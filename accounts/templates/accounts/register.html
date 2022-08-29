@@ -1,13 +1,16 @@
 {% extends 'accounts/base.html' %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 {% block content %}
 
-    <h1 class="text-center mt-5">Regístrese</h1>
+<body style="background-color: #006EA5">
+    
+    
+    <h1 class="container text-center mt-5" style="font:aria; background: white; width: 560px; height: 55px; border-radius: 10px">Regístrese</h1>
     <div class="d-flex justify-content-center">
 
         <div class="card text-dark bg-light mb-3" style="max-width: 40rem;">
-            <div class="card-header">Registrarse</div>
+            <div class="card-header" style="font:aria">¡Completa con tus datos!</div>
             <div class="card-body">
                 {% if messages %}
                 <ul class="messages">
@@ -20,10 +23,11 @@
                     <form action="" method="post">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <button type="submit" class="btn btn-success">Confirmar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+</body>
 {% endblock %}

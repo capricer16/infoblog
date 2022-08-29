@@ -96,7 +96,7 @@ def comment_create(request, pk):
             comment.user = request.user
             comment.save()
             return redirect('post_detail', pk=post.pk)
-    return render(request, 'post/post_detail.html', context)
+    return render(request, 'post/comment_create.html', context)
 
 @login_required
 def comment_delete(request, pk):
