@@ -14,14 +14,12 @@
 
             </div>
         </div>
-
-        <div class="col-md-6">
+             <div class="col-md-6">
             <p>{{ post.contenido }}</p>
         </div> 
-
     </div>    
-    <a href="{% url 'post_list' %}" class="btn btn-primary">Volver</a>
-    <hr>
+        <a href="{% url 'post_list' %}" class="btn btn-primary">Volver</a>
+        <hr>
     <div>
         <form action="{% url 'comment_update' comment.id %}"  method="Post">
             {% csrf_token %}

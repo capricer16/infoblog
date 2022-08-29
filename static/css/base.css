@@ -22,11 +22,8 @@ i {
     background-color: #006EA5;
     color: white;
 }
-/*Quienessomos*/
-.fondo-camara{
+.imagen-fondo {
     background-image: url('../img/frente.png');
-    height: 100%;
+    height: 200px;
     background-repeat: no-repeat;
 }
-  
-
