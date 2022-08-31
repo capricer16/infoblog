@@ -16,7 +16,11 @@ class Inicio(ListView):
 		context['ListadoPosts'] = posts
 		capacitacion = Capacitacion.objects.all().order_by('-id')[:3]
 		context['capacitacion'] = capacitacion
-		
+		primeros = [posts[0], posts[1], posts[2]]
+		ultimos = [posts[3], posts[4], posts[5]]
+		context['primeros'] = primeros
+		context['ultimos'] = ultimos
+		print(context)
 		
 		return context
 def quienessomos(request):

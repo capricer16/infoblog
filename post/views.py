@@ -123,9 +123,10 @@ def comment_create(request, pk):
             return redirect('post_detail', pk=post.pk)
     return render(request, 'post/comment_create.html', context)
 
-@login_required
+
+@user_passes_test(has_admin_role)
 def comment_delete(request, pk):
-    comment = get_object_or_404(Comments, id=pk, user=request.user)
+    comment = get_object_or_404(Comments, id=pk, user=request.user or request.user.role == 'ADMIN')
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
