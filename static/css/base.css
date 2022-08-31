@@ -24,7 +24,7 @@ i {
 }
 .imagen-fondo {
     min-height: 100vh;
-    background: url('../img/frente.png')no-repeat center center;
+    background: url('../img/fotocamara.png')no-repeat center center;
     background-size: cover;
 
 }
@@ -35,4 +35,7 @@ i {
     min-height: 100vh;
     background: url('../img/frente.png')no-repeat center center;
     background-size: cover;
+}
+.titulo-h1 {
+    color: #002250;
 }

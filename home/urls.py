@@ -10,6 +10,5 @@ urlpatterns = [
     path('capacitacion', include('capacitacion.urls')),
     path('post', include('post.urls')),
     path('quienessomos', include('quienessomos.urls')),
-    path('categorias', include('categorias.urls')),
     path('Iniciarsecion', views.iniciarsecion, name='iniciarsecion'),
 ]

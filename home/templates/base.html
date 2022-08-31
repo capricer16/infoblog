@@ -37,17 +37,15 @@
               <a class="nav-link" href="{% url 'contacto:contacto' %}">Contacto</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorías
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorias
               </a>
-              <ul class="dropdown-menu">
-                {% for categorias in categorias %}
-                <li><a class="dropdown-item" href="#">{{ Categoria.nombre }}</a></li>
-                {% endfor %}
-                <!--   <li><a class="dropdown-item" href="#">Categoría 2</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Categoría 3</a></li>-->
-              </ul>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'detalles_categorias' 'fotos' %}">Fotos</a>
+                <a class="dropdown-item" href="#">Categoria 2</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Más categorias</a>
+              </div>
             </li>
             <li class="nav-item">
               {% if request.user.is_authenticated %}

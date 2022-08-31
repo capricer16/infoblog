@@ -1,20 +1,36 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import PostForm
-from .models import Post, Comments
+from .models import Post, Comments, Category
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from post.utils import has_admin_role
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
 
 
 def post_list(request):
-    posts = Post.objects.all()
-    print(posts.query)
-    return render(request, 'post/post_list.html', {'posts': posts})
+    #posts = Post.objects.all()
+    #print(posts.query)
+    #return render(request, 'post/post_list.html', {'posts': posts})
+    categoria = Category.objects.all()
+    posts_list = Post.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts_list, 4)
 
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    context = {
+        'categoria': categoria,
+        'posts': posts,
+    }
+    return render(request, 'post/post_list.html', context=context)
 
 
 @login_required
@@ -71,9 +87,18 @@ def post_detail(request, pk):
     # buscamos el post y lo mostramos
     context = {}
     post = get_object_or_404(Post, id=pk)
-    comments=Comments.objects.all()
+    formulario = CommentForm()
     context['post'] = post
-    context['comments'] = comments
+    context['formulario'] = formulario
+    #if request.method == 'POST':
+       # formulario = CommentForm(request.POST)
+       # context['formulario'] = formulario
+       # if form.is_valid():
+            #comment = formulario.save(commit=False)
+            #comment.post = post
+            #comment.user = request.user
+            #comment.save()
+            #return redirect('post_detail', pk=post.pk)
     return render(request, 'post/post_detail.html', context)
 
 
@@ -121,4 +146,11 @@ def comment_update(request, pk):
             form.save()
         return redirect('post_detail', pk=comment.post.pk)
     return render(request, 'post/comment_update.html', context)
+
+def detalles_categorias(request, categoria):
+    categoria = get_object_or_404(Category, slug= categoria)
+    context = {
+        'categoria' : categoria
+    }
+    return render(request, 'post/detalles_categorias.html', context)
 

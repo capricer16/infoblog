@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'capacitacion',
     'quienessomos',
     'contacto',
-    'categorias'
+    
     
 ]
 
