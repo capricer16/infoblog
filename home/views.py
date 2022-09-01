@@ -12,7 +12,7 @@ class Inicio(ListView):
  
 	def get_context_data(self, **kwargs):
 		context = super(Inicio, self).get_context_data(**kwargs)
-		posts = Post.objects.all().order_by('-id')[:6]
+		posts = Post.objects.all().order_by('-id')[:5]
 		capacitacion = Capacitacion.objects.all().order_by('-id')[:3]
 		context['capacitacion'] = capacitacion
 		primeros = [posts[0], posts[1], posts[2]]
