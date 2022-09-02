@@ -42,15 +42,19 @@
             <p>{{ comment.user.username }}</p>
             <p>Fecha: {{ comment.created_at }}</p>
             </div>
-        {% if request.user.is_authenticated %}
-        <div class="container">
-            {% if request.user == comment.user or request.user.role == 'ADMIN' %}
-                <!--<p>Soy el dueño {{ request.user }}</p> -->
-                <a href="{% url 'comment_update' comment.id %}" class="btn btn-primary">Editar comentario</a>
-                <a href="{% url 'comment_delete' comment.id %}" class="btn btn-danger">Borrar comentario</a>
-            {% endif %}
-        </div>
-        {% endif %}
+            <div class="container">
+                {% if request.user == comment.user %}
+                    <!--<p>Soy el dueño {{ request.user }}</p> -->
+                    
+                    <a href="{% url 'comment_update' comment.id %}" class="btn btn-primary">Editar comentario</a>
+                {% endif %}
+                {% if request.user == comment.user or request.user.role == 'ADMIN' %}
+                    <!--<p>Soy el dueño {{ request.user }}</p> -->
+                    
+                    <a href="{% url 'comment_delete' comment.id %}" class="btn btn-danger">Borrar comentario</a>
+                {% endif %}
+                
+            </div>
         {% endfor %}
     </div>
     <hr>

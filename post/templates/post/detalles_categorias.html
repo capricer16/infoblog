@@ -10,10 +10,10 @@
         {%for post in categoria.posts.all %}
         <div class="col-lg-4 mb-4">
           <div class="card">
-            <img src="{{post.foto.url}}"  class="card-img-top" alt="imagen del post">
+            <img src="{{post.foto.url}}"  class="card-img-top my-4" alt="imagen del post">
             <div class="card-body">
               <h3 class="card-title">{{ post.titulo }}</h3>
-              <h6 class="card-title">{{ post.Subtitulo }}</h6>
+              <h6 class="card-title">{{ post.subtitulo }}</h6>
               <p class="card-text">{{ post.contenido }}</p>
               <a href="{% url 'post_detail' post.id %}" class="btn btn-outline-success btn-sm">Leer más</a>
               <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>

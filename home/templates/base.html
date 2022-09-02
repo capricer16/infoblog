@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
+              <a class="btn btn-primary" role="button" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'quienessomos:quienessomos' %}">¿Quiénes somos?</a>
@@ -61,9 +61,9 @@
 
 
           </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscador" aria-label="Search">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
+          <form class="form-inline" action="{% url 'base' %}" method="GET">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Buscador" id="buscador" aria-label="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit" href="#">Buscar</button>
           </form>
         </div>
       </nav>
@@ -99,9 +99,17 @@
     </div>
 
     <div class="d-flex justify-content-between px-4 pt-4 my-4 border-top">
-      <p>©  Grupo 10 - Informatorio, 2022.</p>
+      <p>©  Grupo 10 - Informatorio, 2022.</p> 
+        <br>
+        <li class="d-flex ">
+          <i class="fa-solid fa-square-phone"></i><p>03735-430650 </p>
+        </li>
+        <li class="d-flex ">
+          <i class="fa-solid fa-location-dot"></i><p> URUGUAY 171, Villa Angela, Chaco </p>
+        </li>
+        
       <ul class="list-unstyled d-flex">
-        <li class="ms-3">
+        <li class="ms-3 px-2">
           <a class="link-dark" href="#">
             <i class="fa-brands fa-square-twitter"></i>
           </a>

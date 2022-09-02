@@ -3,6 +3,7 @@
 .banner {
     background-image: url('../img/banner.png');
     height: 200px;
+    margin: 2%;
 }
 .navbar{
     background-color: var(--main-color);

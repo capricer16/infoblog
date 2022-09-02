@@ -11,4 +11,5 @@ urlpatterns = [
     path('post', include('post.urls')),
     path('quienessomos', include('quienessomos.urls')),
     path('Iniciarsecion', views.iniciarsecion, name='iniciarsecion'),
+    path('', views.buscador, name='base'),
 ]

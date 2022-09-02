@@ -6,7 +6,7 @@ from .forms import CommentForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from post.utils import has_admin_role
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from accounts.models import User
 # Create your views here.
 
 
@@ -124,14 +124,17 @@ def comment_create(request, pk):
     return render(request, 'post/comment_create.html', context)
 
 
-@user_passes_test(has_admin_role)
+@login_required
 def comment_delete(request, pk):
-    comment = get_object_or_404(Comments, id=pk, user=request.user or request.user.role == 'ADMIN')
+    if request.user.role == User.ADMIN:
+        comment = get_object_or_404(Comments, id=pk)
+    else:
+        comment = get_object_or_404(Comments, id=pk, user=request.user)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
 
-@login_required
+
 def comment_update(request, pk):
     # buscamos el post y lo mostramos
     context = {}
