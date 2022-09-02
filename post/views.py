@@ -7,9 +7,22 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from post.utils import has_admin_role
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from accounts.models import User
+from django.db.models import Q
 # Create your views here.
 
-
+def post_list(request):
+    busqueda = request.GET.get('buscar')
+    posts = Post.objects.all()
+    if busqueda:
+        posts= Post.objects.filter(
+            Q(titulo__icontains=busqueda) |
+            Q(subtitulo__icontains=busqueda) |
+            Q(contenido__icontains=busqueda)
+        ).distinct()
+    
+        
+    
+    return render(request, 'post/post_list.html', {'posts': posts})
 
 def post_list(request):
     #posts = Post.objects.all()

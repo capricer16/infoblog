@@ -31,7 +31,8 @@ def quienessomos(request):
 def iniciarsecion(request):
     return render(request, 'home/iniciarsecion.html')  
 
-def buscador(self):
-   q = request.GET.get('q', '')
-   post = Post.objects.filter(Post__titulo__icontains=q)
-   return render(request, 'home/base.html', {'post': post})
+#def buscador(self):
+   #q = request.GET.get('q', '')
+   #post = Post.objects.filter(Post__titulo__icontains=q)
+   #return render(request, 'home/base.html', {'post': post})
+   
